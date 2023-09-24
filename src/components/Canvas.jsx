@@ -1,6 +1,11 @@
 import './styles/canvas';
 const Canvas = () => {
-  return <div>Canvas</div>;
+  return (
+    <div className="canvas">
+      {' '}
+      <canvas width={600} height={400} />
+    </div>
+  );
 };
 
 export default Canvas;
