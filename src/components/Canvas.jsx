@@ -1,4 +1,4 @@
-import './styles/canvas';
+import '../styles/canvas.scss';
 const Canvas = () => {
   return (
     <div className="canvas">

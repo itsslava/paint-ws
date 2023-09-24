@@ -1,4 +1,4 @@
-import './styles/toolbar';
+import '../styles/toolbar.scss';
 
 const Toolbar = () => {
   return (

@@ -1,7 +1,7 @@
-import { Canvas } from './components/Canvas';
-import { Toolbar } from './components/Toolbar';
-import { SettingBar } from './components/SettingBar';
-import './styles/app';
+import Canvas from './components/Canvas';
+import Toolbar from './components/Toolbar';
+import SettingBar from './components/SettingBar';
+import './styles/app.scss';
 function App() {
   return (
     <div className="app">
