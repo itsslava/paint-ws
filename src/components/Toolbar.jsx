@@ -1,5 +1,5 @@
 // states
-import ToolState from '../store/toolState';
+import toolState from '../store/toolState';
 import CanvasState from '../store/canvasState';
 // tools
 import Brush from '../tools/Brush';
@@ -11,29 +11,33 @@ import Line from '../tools/Line';
 import '../styles/toolbar.scss';
 
 const Toolbar = () => {
+  const changeColor = (e) => {
+    toolState.setFillColor(e.target.value);
+    toolState.setStrokeColor(e.target.value);
+  };
   return (
     <div className="toolbar">
       <button
         className="toolbar__btn brush"
-        onClick={() => ToolState.setTool(new Brush(CanvasState.canvas))}
+        onClick={() => toolState.setTool(new Brush(CanvasState.canvas))}
       />
       <button
         className="toolbar__btn rect"
-        onClick={() => ToolState.setTool(new Rect(CanvasState.canvas))}
+        onClick={() => toolState.setTool(new Rect(CanvasState.canvas))}
       />
       <button
         className="toolbar__btn circle"
-        onClick={() => ToolState.setTool(new Circle(CanvasState.canvas))}
+        onClick={() => toolState.setTool(new Circle(CanvasState.canvas))}
       />
       <button
         className="toolbar__btn eraser"
-        onClick={() => ToolState.setTool(new Eraser(CanvasState.canvas))}
+        onClick={() => toolState.setTool(new Eraser(CanvasState.canvas))}
       />
       <button
         className="toolbar__btn line"
-        onClick={() => ToolState.setTool(new Line(CanvasState.canvas))}
+        onClick={() => toolState.setTool(new Line(CanvasState.canvas))}
       />
-      <input type="color" />
+      <input type="color" onChange={(e) => changeColor(e)} />
       <button className="toolbar__btn undo" />
       <button className="toolbar__btn redo" />
       <button className="toolbar__btn save" />
