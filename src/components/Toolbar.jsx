@@ -1,6 +1,6 @@
 // states
 import toolState from '../store/toolState';
-import CanvasState from '../store/canvasState';
+import canvasState from '../store/canvasState';
 // tools
 import Brush from '../tools/Brush';
 import Rect from '../tools/Rect';
@@ -19,27 +19,27 @@ const Toolbar = () => {
     <div className="toolbar">
       <button
         className="toolbar__btn brush"
-        onClick={() => toolState.setTool(new Brush(CanvasState.canvas))}
+        onClick={() => toolState.setTool(new Brush(canvasState.canvas))}
       />
       <button
         className="toolbar__btn rect"
-        onClick={() => toolState.setTool(new Rect(CanvasState.canvas))}
+        onClick={() => toolState.setTool(new Rect(canvasState.canvas))}
       />
       <button
         className="toolbar__btn circle"
-        onClick={() => toolState.setTool(new Circle(CanvasState.canvas))}
+        onClick={() => toolState.setTool(new Circle(canvasState.canvas))}
       />
       <button
         className="toolbar__btn eraser"
-        onClick={() => toolState.setTool(new Eraser(CanvasState.canvas))}
+        onClick={() => toolState.setTool(new Eraser(canvasState.canvas))}
       />
       <button
         className="toolbar__btn line"
-        onClick={() => toolState.setTool(new Line(CanvasState.canvas))}
+        onClick={() => toolState.setTool(new Line(canvasState.canvas))}
       />
       <input type="color" onChange={(e) => changeColor(e)} />
-      <button className="toolbar__btn undo" />
-      <button className="toolbar__btn redo" />
+      <button className="toolbar__btn undo" onClick={() => canvasState.undo()} />
+      <button className="toolbar__btn redo" onClick={() => canvasState.redo()} />
       <button className="toolbar__btn save" />
     </div>
   );
